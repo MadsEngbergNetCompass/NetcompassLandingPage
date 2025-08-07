@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark background circle -->
+  <circle cx="140" cy="140" r="118" fill="#1A1A1A" />
+
+  <!-- Outer ring -->
+  <circle cx="140" cy="140" r="115" fill="none" stroke="url(#goldGradient)" stroke-width="2" />
+
+  <!-- Inner circles (now 4 of them) -->
+  <circle cx="140" cy="140" r="92" fill="none" stroke="#333" stroke-width="1" />
+  <circle cx="140" cy="140" r="69" fill="none" stroke="#333" stroke-width="1" />
+  <circle cx="140" cy="140" r="46" fill="none" stroke="#333" stroke-width="1" />
+  <circle cx="140" cy="140" r="23" fill="none" stroke="#333" stroke-width="1" />
+
+  <!-- Avatar icon -->
+  <g transform="translate(110,110) scale(2.5)">
+    <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3" fill="none" stroke="url(#goldGradient)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="12" cy="10" r="3" fill="none" stroke="url(#goldGradient)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="12" cy="12" r="10" fill="none" stroke="url(#goldGradient)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Compass points -->
+  <path d="M140,10 L146,22 L140,18 L134,22 Z" fill="url(#goldGradient)" />
+  <path d="M270,140 L258,146 L262,140 L258,134 Z" fill="url(#goldGradient)" />
+  <path d="M140,270 L134,258 L140,262 L146,258 Z" fill="url(#goldGradient)" />
+  <path d="M10,140 L22,134 L18,140 L22,146 Z" fill="url(#goldGradient)" />
+
+  <!-- Network nodes -->
+  <circle cx="220" cy="80" r="6" fill="url(#goldGradient)" />
+  <circle cx="80" cy="220" r="6" fill="url(#goldGradient)" />
+  <circle cx="200" cy="200" r="6" fill="url(#goldGradient)" />
+  <circle cx="80" cy="80" r="6" fill="url(#goldGradient)" />
+
+  <!-- Adjusted network connections (moved further from avatar) -->
+  <path d="M214.8,83.1 L174,106" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M83.1,214.8 L106,174" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M195.5,195.5 L174,174" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M84.5,84.5 L106,106" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- Subtle star-like points -->
+  <circle cx="260" cy="140" r="1" fill="#FFF" opacity="0.5" />
+  <circle cx="20" cy="140" r="1" fill="#FFF" opacity="0.5" />
+  <circle cx="140" cy="260" r="1" fill="#FFF" opacity="0.5" />
+  <circle cx="140" cy="20" r="1" fill="#FFF" opacity="0.5" />
+</svg>
