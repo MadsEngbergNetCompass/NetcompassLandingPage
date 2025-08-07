@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Netcompass - Professional Networking Insights</title>
+    <meta name="description" content="Discover insights, tips, and stories about professional networking from the Netcompass team.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+        
+        .dark {
+            color: #ffffff;
+            background-color: #0a0a0a;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: #ff6b35;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e55a2b;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #ff6b35;
+            border: 2px solid #ff6b35;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ff6b35;
+            color: white;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dark .card {
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .dark .navbar {
+            background: rgba(10, 10, 10, 0.95);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 107, 53, 0.1) 100%);
+        }
+        
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(10, 10, 10, 1) 50%, rgba(255, 107, 53, 0.05) 100%);
+        }
+        
+        .pattern-bg {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 107, 53, 0.1) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6b35;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover .feature-icon {
+            background: rgba(255, 107, 53, 0.2);
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            .desktop-menu {
+                display: none;
+            }
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .blog-post {
+            margin-bottom: 4rem;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 2rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .blog-excerpt {
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            color: #ff6b35;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: #e55a2b;
+        }
+        
+        .blog-expanded-content {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.875rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+        
+        .blog-expanded-content.show {
+            display: block;
+        }
+        
+        .read-less {
+            color: #ff6b35;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+        
+        .read-less:hover {
+            color: #e55a2b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html">
+                        <img src="img/netcompas-icon.png" alt="NetCompass Logo" class="w-10 h-10 rounded-md">
+                    </a>
+                    <a href="index.html">
+                        <span class="font-bold text-xl">NetCompass</span>
+                    </a>
+                </div>
+                
+                <div class="desktop-menu hidden md:flex items-center space-x-8">
+                    <a href="blog.html" class="text-orange-600 font-semibold">Blog</a>
+                    <a href="index.html#gallery" class="text-gray-700 hover:text-orange-600 transition-colors">Gallery</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section class="relative">
+        <div class="container">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 pb-16">
+                
+                <!-- Left Sidebar - Table of Contents -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 pb-16 bg-white rounded-xl shadow-lg p-6 max-h-[calc(100vh-6rem)] overflow-y-auto">
+                        <h3 class="text-xl font-bold mb-4 text-gray-900">Table of Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#post-1" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Revolutionizing Professional Networking
+                            </a>
+                            <a href="#post-2" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Crafting Meaningful Connections
+                            </a>
+                            <a href="#post-3" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Enhancing Your Networking Experience
+                            </a>
+                            <a href="#post-4" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Leading the Way in Innovation
+                            </a>
+                            <a href="#post-5" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Commitment to Transparency
+                            </a>
+                            <a href="#post-6" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Join Our Professional Network
+                            </a>
+                            <a href="#post-7" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Seamless Onboarding
+                            </a>
+                            <a href="#post-8" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Advanced Connections Management
+                            </a>
+                            <a href="#post-9" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Communication Platform
+                            </a>
+                            <a href="#post-10" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
+                                Network Visualization
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="lg:col-span-3">
+                    <!-- Hero Section -->
+                    <section class="relative py-10 lg:py-16 overflow-hidden hero-gradient rounded-xl mb-8">
+                        <div class="absolute inset-0 opacity-30 pattern-bg"></div>
+                        <div class="relative px-8 py-12">
+                            <div class="text-left max-w-4xl">
+                                <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+                                    NetCompass 
+                                    <span class="text-gradient">Blog</span>
+                                </h1>
+                                <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Discover insights, tips, and stories about professional networking from our team of experts.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Blog Posts -->
+                    <div class="space-y-8">
+                        
+                        <!-- Blog Post 1 -->
+                        <article id="post-1" class="blog-post">
+                            <img src="img/Revolutionizing Professional Networking for Everyone-Ab1.png" 
+                                 alt="Professional Networking" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>January 15, 2025</span>
+                                    <span>•</span>
+                                    <span>Networking</span>
+                                </div>
+                                <h2 class="blog-title">Revolutionizing Professional Networking for Everyone</h2>
+                                                                 <p class="blog-excerpt">
+                                     Discover how NetCompass is transforming the way professionals connect, build relationships, and unlock opportunities in today's digital landscape. Our platform combines cutting-edge technology with human-centered design to create meaningful connections that drive career growth.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>In today's rapidly evolving professional landscape, the traditional approach to networking has become increasingly inadequate. Professionals are seeking more than just superficial connections—they want meaningful relationships that can truly advance their careers and personal growth.</p>
+                                     
+                                     <p>NetCompass addresses this need by providing a comprehensive platform that goes beyond simple contact management. Our advanced algorithms help identify potential connections based on shared interests, professional goals, and complementary skills. This intelligent matching system ensures that every connection has the potential to be mutually beneficial.</p>
+                                     
+                                     <p>The platform's user-friendly interface makes it easy to maintain and nurture these relationships. From automated follow-up reminders to personalized communication templates, NetCompass provides the tools needed to build lasting professional relationships without the overwhelming complexity of traditional networking platforms.</p>
+                                     
+                                     <p>What truly sets NetCompass apart is our commitment to authenticity. We understand that genuine professional relationships are built on trust, transparency, and mutual respect. Our platform facilitates these authentic connections while providing the technological infrastructure needed to scale your network effectively.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 2 -->
+                        <article id="post-2" class="blog-post">
+                            <img src="img/Our Journey Crafting Meaningful Connections in a Superficial Networking World-Ab2.png" 
+                                 alt="Meaningful Connections" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>January 12, 2025</span>
+                                    <span>•</span>
+                                    <span>Connections</span>
+                                </div>
+                                <h2 class="blog-title">Our Journey: Crafting Meaningful Connections in a Superficial Networking World</h2>
+                                                                 <p class="blog-excerpt">
+                                     In a world where networking often feels transactional and superficial, we're on a mission to bring authenticity back to professional relationships. Learn about our philosophy and how we're building a platform that prioritizes quality over quantity.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>The current state of professional networking is characterized by a paradox: while we have more ways to connect than ever before, the quality of these connections has diminished significantly. Social media platforms and traditional networking events often prioritize quantity over quality, leading to shallow relationships that provide little real value.</p>
+                                     
+                                     <p>At NetCompass, we believe that meaningful professional relationships are built on three fundamental principles: mutual understanding, genuine interest, and long-term value creation. Our platform is designed to facilitate connections that go beyond the superficial exchange of business cards or LinkedIn connections.</p>
+                                     
+                                     <p>We've developed sophisticated algorithms that analyze not just professional backgrounds, but also interests, values, and long-term goals. This deeper understanding allows us to suggest connections that have the potential to develop into mutually beneficial relationships. Our users report that connections made through NetCompass are more likely to result in actual collaborations, mentorship opportunities, and career advancement.</p>
+                                     
+                                     <p>Quality over quantity isn't just a slogan for us—it's embedded in every feature of our platform. From our intelligent connection suggestions to our relationship strength indicators, every tool is designed to help users build fewer, but more meaningful, professional relationships.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 3 -->
+                        <article id="post-3" class="blog-post">
+                            <img src="img/Designed for You Enhancing Your Networking Experience-Ab3.png" 
+                                 alt="User Experience" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>January 10, 2025</span>
+                                    <span>•</span>
+                                    <span>UX Design</span>
+                                </div>
+                                <h2 class="blog-title">Designed for You: Enhancing Your Networking Experience</h2>
+                                                                 <p class="blog-excerpt">
+                                     Every feature in NetCompass is designed with you in mind. From intuitive interfaces to personalized recommendations, discover how our user-centered approach makes networking more effective and enjoyable than ever before.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>User experience design is at the core of everything we do at NetCompass. We understand that even the most powerful networking tools are useless if they're not intuitive and enjoyable to use. That's why we've invested heavily in creating an interface that feels natural and effortless.</p>
+                                     
+                                     <p>Our design philosophy centers around three key principles: simplicity, personalization, and efficiency. The platform's clean, uncluttered interface makes it easy to focus on what matters most—building meaningful connections. We've eliminated unnecessary complexity while maintaining all the powerful features professionals need.</p>
+                                     
+                                     <p>Personalization is another cornerstone of our approach. NetCompass learns from your interactions and preferences to provide increasingly relevant suggestions and features. Whether it's connection recommendations, content curation, or interface customization, the platform adapts to your unique networking style and goals.</p>
+                                     
+                                     <p>Efficiency is achieved through intelligent automation and smart workflows. From automated follow-up scheduling to intelligent contact categorization, NetCompass handles the tedious aspects of networking so you can focus on building genuine relationships. Our users report spending 40% less time on administrative networking tasks while achieving better results.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 4 -->
+                        <article id="post-4" class="blog-post">
+                            <img src="img/Leading the Way in Networking Innovation-Ab4.png" 
+                                 alt="Innovation" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>January 8, 2025</span>
+                                    <span>•</span>
+                                    <span>Innovation</span>
+                                </div>
+                                <h2 class="blog-title">Leading the Way in Networking Innovation</h2>
+                                                                 <p class="blog-excerpt">
+                                     Innovation is at the heart of everything we do. Explore the cutting-edge technologies and forward-thinking approaches that make NetCompass the leading platform for professional networking in the digital age.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>Innovation isn't just a buzzword at NetCompass—it's the driving force behind every feature and decision. We're constantly exploring emerging technologies and methodologies to ensure our platform remains at the forefront of professional networking.</p>
+                                     
+                                     <p>Our AI-powered recommendation engine represents one of our most significant innovations. Unlike traditional networking platforms that rely on simple keyword matching, our system uses advanced machine learning algorithms to analyze user behavior, professional interests, and relationship patterns. This enables us to suggest connections that have genuine potential for meaningful collaboration.</p>
+                                     
+                                     <p>We're also pioneering new approaches to relationship management through our predictive analytics capabilities. The platform can identify when relationships might be weakening and suggest appropriate follow-up actions. This proactive approach helps users maintain and strengthen their professional networks more effectively.</p>
+                                     
+                                     <p>Looking to the future, we're exploring the integration of augmented reality for virtual networking events, blockchain technology for secure credential verification, and advanced natural language processing for more intelligent communication tools. These innovations will continue to set NetCompass apart as the most forward-thinking networking platform available.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 5 -->
+                        <article id="post-5" class="blog-post">
+                            <img src="img/Commitment to Transparency Your Trust is Our Priority-Ab5.png" 
+                                 alt="Transparency" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>January 5, 2025</span>
+                                    <span>•</span>
+                                    <span>Trust</span>
+                                </div>
+                                <h2 class="blog-title">Commitment to Transparency: Your Trust is Our Priority</h2>
+                                                                 <p class="blog-excerpt">
+                                     Trust is the foundation of any successful networking platform. Learn about our commitment to transparency, data privacy, and building a secure environment where professionals can connect with confidence.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>In an era where data breaches and privacy concerns dominate headlines, trust has become the most valuable currency in digital platforms. At NetCompass, we understand that professionals entrust us with their most valuable asset—their professional relationships and reputation.</p>
+                                     
+                                     <p>Our commitment to transparency begins with our data practices. We believe users have the right to know exactly how their information is being used. That's why we provide detailed explanations of our data collection, processing, and sharing policies in clear, accessible language. We never sell user data to third parties, and we give users complete control over their information.</p>
+                                     
+                                     <p>Security is another cornerstone of our trust-building efforts. We employ enterprise-grade encryption, regular security audits, and strict access controls to protect user data. Our platform undergoes continuous security testing and we maintain compliance with international data protection regulations including GDPR and CCPA.</p>
+                                     
+                                     <p>We also believe in building trust through accountability. Our team is committed to being responsive to user concerns and transparent about any issues that arise. We regularly publish security reports and maintain open channels of communication with our user community.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 6 -->
+                        <article id="post-6" class="blog-post">
+                            <img src="img/Join Our Professional Network Today-Ab5.png" 
+                                 alt="Community" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>January 3, 2025</span>
+                                    <span>•</span>
+                                    <span>Community</span>
+                                </div>
+                                <h2 class="blog-title">Join Our Professional Network Today</h2>
+                                                                 <p class="blog-excerpt">
+                                     Ready to take your professional networking to the next level? Discover how joining the NetCompass community can open doors to new opportunities, valuable connections, and career growth you never thought possible.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>Joining the NetCompass community is more than just signing up for another networking platform—it's becoming part of a movement that's redefining how professionals connect and collaborate. Our community represents a diverse network of forward-thinking professionals who are committed to building meaningful, mutually beneficial relationships.</p>
+                                     
+                                     <p>When you join NetCompass, you gain access to a carefully curated network of professionals who share your commitment to quality connections. Our intelligent matching system ensures that every suggested connection has the potential to add real value to your professional life, whether through mentorship, collaboration opportunities, or career advancement.</p>
+                                     
+                                     <p>The benefits of joining extend beyond individual connections. Our community features include exclusive networking events, industry-specific discussion groups, and collaborative projects that bring together professionals with complementary skills and interests. These opportunities often lead to unexpected career breakthroughs and lasting professional relationships.</p>
+                                     
+                                     <p>We also provide comprehensive onboarding support to help you get the most out of your NetCompass experience. From personalized tutorials to one-on-one guidance from our community managers, we ensure that every new member feels confident and supported as they begin their networking journey.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 7 -->
+                        <article id="post-7" class="blog-post">
+                            <img src="img/Seamless Onboarding Effortlessly Connect and Set Up Your Profile-F1.png" 
+                                 alt="Onboarding" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>December 30, 2024</span>
+                                    <span>•</span>
+                                    <span>Getting Started</span>
+                                </div>
+                                <h2 class="blog-title">Seamless Onboarding: Effortlessly Connect and Set Up Your Profile</h2>
+                                                                 <p class="blog-excerpt">
+                                     Getting started with NetCompass is designed to be as smooth as possible. Learn about our streamlined onboarding process and how you can have your professional profile up and running in minutes, not hours.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>We understand that the onboarding process can make or break a user's experience with any platform. That's why we've designed our onboarding flow to be intuitive, efficient, and genuinely helpful. From the moment you sign up, our goal is to get you connected and productive as quickly as possible.</p>
+                                     
+                                     <p>The onboarding process begins with a simple, guided profile creation that takes just a few minutes. We ask only the essential questions needed to start making meaningful connections, avoiding the overwhelming forms that plague many networking platforms. Our intelligent system can also import relevant information from your existing professional profiles to save you time.</p>
+                                     
+                                     <p>Once your profile is created, our AI-powered system immediately begins analyzing your professional background, interests, and goals to suggest relevant connections. These initial suggestions are carefully curated to ensure quality, and you have complete control over which connections to pursue.</p>
+                                     
+                                     <p>We also provide interactive tutorials and tips throughout the onboarding process to help you understand and utilize all of NetCompass's features effectively. Our support team is available to answer any questions and provide personalized guidance to ensure you get the most out of your networking experience.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 8 -->
+                        <article id="post-8" class="blog-post">
+                            <img src="img/Streamline Your Networking with Advanced Connections Management Features-F3.png" 
+                                 alt="Connection Management" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>December 28, 2024</span>
+                                    <span>•</span>
+                                    <span>Features</span>
+                                </div>
+                                <h2 class="blog-title">Streamline Your Networking with Advanced Connections Management Features</h2>
+                                                                 <p class="blog-excerpt">
+                                     Managing your professional network shouldn't be complicated. Discover the powerful tools and features that make organizing, categorizing, and nurturing your connections easier and more effective than ever before.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>Effective network management is the cornerstone of professional success, yet most platforms make this process unnecessarily complex. At NetCompass, we've reimagined connection management to be both powerful and intuitive, giving you the tools you need without the complexity you don't.</p>
+                                     
+                                     <p>Our advanced categorization system allows you to organize connections by multiple criteria simultaneously—industry, relationship strength, potential for collaboration, and more. This multi-dimensional approach helps you identify opportunities and maintain relationships more effectively than traditional single-category systems.</p>
+                                     
+                                     <p>We've also developed intelligent automation features that handle the routine aspects of network maintenance. Automated follow-up reminders, relationship strength tracking, and smart contact suggestions help you stay engaged with your network without constant manual effort. The system learns from your interactions to provide increasingly relevant suggestions.</p>
+                                     
+                                     <p>The platform's analytics dashboard provides valuable insights into your networking patterns and relationship health. You can track engagement levels, identify connections that need attention, and measure the effectiveness of your networking efforts. This data-driven approach helps you optimize your networking strategy for maximum impact.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 9 -->
+                        <article id="post-9" class="blog-post">
+                            <img src="img/Streamline Your Communication with Our Live Streams and Messaging Platform-H5.png" 
+                                 alt="Communication" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>December 25, 2024</span>
+                                    <span>•</span>
+                                    <span>Communication</span>
+                                </div>
+                                <h2 class="blog-title">Streamline Your Communication with Our Live Streams and Messaging Platform</h2>
+                                                                 <p class="blog-excerpt">
+                                     Effective communication is key to building strong professional relationships. Explore how our integrated messaging and live streaming features help you stay connected and engaged with your network in real-time.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>Communication is the lifeblood of any professional relationship, and we've designed our messaging platform to facilitate meaningful, productive conversations. Unlike generic messaging apps, our system is specifically tailored for professional networking, with features that enhance rather than distract from your networking goals.</p>
+                                     
+                                     <p>Our messaging platform includes intelligent features like conversation templates for common networking scenarios, automated follow-up suggestions, and relationship context that helps you maintain appropriate communication styles with different connections. The system also provides gentle reminders for important conversations that need attention.</p>
+                                     
+                                     <p>The live streaming feature takes professional networking to the next level by enabling real-time virtual events, presentations, and networking sessions. These live interactions help build stronger relationships than text-based communication alone, while maintaining the convenience of digital platforms. Our streaming technology ensures high-quality, reliable connections for professional interactions.</p>
+                                     
+                                     <p>We've also integrated advanced privacy controls that allow users to manage their communication preferences with granular precision. Whether you prefer to receive messages from all connections or only those in specific categories, our system respects your preferences while maintaining the flexibility needed for effective networking.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 10 -->
+                        <article id="post-10" class="blog-post">
+                            <img src="img/Unlock Your Network Visualize Connections and Key DecisionMakers Effortlessly-F6.png" 
+                                 alt="Network Visualization" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>December 22, 2024</span>
+                                    <span>•</span>
+                                    <span>Analytics</span>
+                                </div>
+                                <h2 class="blog-title">Unlock Your Network: Visualize Connections and Key Decision Makers Effortlessly</h2>
+                                                                 <p class="blog-excerpt">
+                                     See your professional network like never before with our advanced visualization tools. Discover hidden connections, identify key decision makers, and understand the strength of your relationships through intuitive data visualization.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <div class="blog-expanded-content">
+                                     <p>Network visualization is one of NetCompass's most powerful features, transforming complex relationship data into clear, actionable insights. Our advanced visualization tools help you understand your network structure, identify opportunities, and make informed decisions about relationship development.</p>
+                                     
+                                     <p>The platform's network mapping feature creates interactive visual representations of your professional relationships, showing connection strength, mutual contacts, and potential pathways to key decision makers. This bird's-eye view helps you identify strategic networking opportunities and understand how your connections relate to each other.</p>
+                                     
+                                     <p>Our decision-maker identification tools use advanced algorithms to analyze your network and highlight individuals who have significant influence in their organizations or industries. This helps you focus your networking efforts on connections that can provide the most value for your career goals.</p>
+                                     
+                                     <p>The relationship strength indicators provide real-time feedback on the health of your professional relationships, helping you identify which connections need attention and which are thriving. This data-driven approach ensures that your networking efforts are focused and effective.</p>
+                                     
+                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
+                                 </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section-padding bg-orange-600 text-white">
+        <div class="container text-center">
+            <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl mb-4">
+                Ready to Transform Your Network?
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Join thousands of professionals who are already building stronger connections with NetCompass.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact" class="btn bg-white text-orange-600 hover:bg-gray-100">
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container">
+            <div class="flex flex-col items-center justify-center space-y-6">
+                <div class="flex items-center justify-center gap-2">
+                    <img src="img/netcompas-icon.png" alt="NetCompass Logo" class="w-10 h-10 rounded-md">
+                    <span class="text-lg font-medium">NetCompass</span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-x-4 gap-y-1">
+                    <a href="https://www.iubenda.com/terms-and-conditions/83487597" class="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="https://www.iubenda.com/privacy-policy/83487597/cookie-policy" class="text-gray-400 hover:text-white transition-colors">Cookies</a>
+                    <a href="https://www.iubenda.com/privacy-policy/83487597" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                </div>
+
+                <p class="text-center text-sm text-gray-400">
+                    &copy; 2025 NetCompass. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+        
+        // Blog content toggle function
+        function toggleBlogContent(element) {
+            const blogPost = element.closest('.blog-post');
+            const expandedContent = blogPost.querySelector('.blog-expanded-content');
+            const readMoreBtn = blogPost.querySelector('.read-more');
+            const readLessBtn = blogPost.querySelector('.read-less');
+            
+            if (expandedContent.classList.contains('show')) {
+                // Collapse the content
+                expandedContent.classList.remove('show');
+                readMoreBtn.style.display = 'inline-block';
+                readLessBtn.style.display = 'none';
+            } else {
+                // Expand the content
+                expandedContent.classList.add('show');
+                readMoreBtn.style.display = 'none';
+                readLessBtn.style.display = 'inline-block';
+            }
+        }
+    </script>
+</body>
+</html>
