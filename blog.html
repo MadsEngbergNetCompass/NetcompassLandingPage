@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- Blog Content -->
-    <script src="blog-content.js"></script>
+    <script src="blog-content-formatted.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -296,7 +296,6 @@
                 
                 <div class="desktop-menu hidden md:flex items-center space-x-8">
                     <a href="blog.html" class="text-orange-600 font-semibold">Blog</a>
-                    <a href="index.html#gallery" class="text-gray-700 hover:text-orange-600 transition-colors">Gallery</a>
                     <a href="index.html#contact" class="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
                 </div>
             </div>
@@ -389,6 +388,27 @@
                             </div>
                         </article>
 
+                        <!-- Blog Post 2 -->
+                        <article id="post-2" class="blog-post">
+                            <img src="img/Our Journey Crafting Meaningful Connections in a Superficial Networking World-Ab2.png" 
+                                 alt="Meaningful Connections" 
+                                 class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>January 12, 2025</span>
+                                    <span>•</span>
+                                    <span>Connections</span>
+                                </div>
+                                <h2 class="blog-title">Our Journey: Crafting Meaningful Connections in a Superficial Networking World</h2>
+                                                                 <p class="blog-excerpt">
+                                     In a world where networking often feels transactional and superficial, we're on a mission to bring authenticity back to professional relationships. Learn about our philosophy and how we're building a platform that prioritizes quality over quantity.
+                                 </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
+                                 <div class="blog-expanded-content">
+                                 </div>
+                            </div>
+                        </article>
+
                         <!-- Blog Post 3 -->
                         <article id="post-3" class="blog-post">
                             <img src="img/Designed for You Enhancing Your Networking Experience-Ab3.png" 
@@ -404,17 +424,8 @@
                                                                  <p class="blog-excerpt">
                                      Every feature in NetCompass is designed with you in mind. From intuitive interfaces to personalized recommendations, discover how our user-centered approach makes networking more effective and enjoyable than ever before.
                                  </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
-                                     <p>User experience design is at the core of everything we do at NetCompass. We understand that even the most powerful networking tools are useless if they're not intuitive and enjoyable to use. That's why we've invested heavily in creating an interface that feels natural and effortless.</p>
-                                     
-                                     <p>Our design philosophy centers around three key principles: simplicity, personalization, and efficiency. The platform's clean, uncluttered interface makes it easy to focus on what matters most—building meaningful connections. We've eliminated unnecessary complexity while maintaining all the powerful features professionals need.</p>
-                                     
-                                     <p>Personalization is another cornerstone of our approach. NetCompass learns from your interactions and preferences to provide increasingly relevant suggestions and features. Whether it's connection recommendations, content curation, or interface customization, the platform adapts to your unique networking style and goals.</p>
-                                     
-                                     <p>Efficiency is achieved through intelligent automation and smart workflows. From automated follow-up scheduling to intelligent contact categorization, NetCompass handles the tedious aspects of networking so you can focus on building genuine relationships. Our users report spending 40% less time on administrative networking tasks while achieving better results.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
                                  </div>
                             </div>
                         </article>
@@ -434,17 +445,8 @@
                                                                  <p class="blog-excerpt">
                                      Innovation is at the heart of everything we do. Explore the cutting-edge technologies and forward-thinking approaches that make NetCompass the leading platform for professional networking in the digital age.
                                  </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
-                                     <p>Innovation isn't just a buzzword at NetCompass—it's the driving force behind every feature and decision. We're constantly exploring emerging technologies and methodologies to ensure our platform remains at the forefront of professional networking.</p>
-                                     
-                                     <p>Our AI-powered recommendation engine represents one of our most significant innovations. Unlike traditional networking platforms that rely on simple keyword matching, our system uses advanced machine learning algorithms to analyze user behavior, professional interests, and relationship patterns. This enables us to suggest connections that have genuine potential for meaningful collaboration.</p>
-                                     
-                                     <p>We're also pioneering new approaches to relationship management through our predictive analytics capabilities. The platform can identify when relationships might be weakening and suggest appropriate follow-up actions. This proactive approach helps users maintain and strengthen their professional networks more effectively.</p>
-                                     
-                                     <p>Looking to the future, we're exploring the integration of augmented reality for virtual networking events, blockchain technology for secure credential verification, and advanced natural language processing for more intelligent communication tools. These innovations will continue to set NetCompass apart as the most forward-thinking networking platform available.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
                                  </div>
                             </div>
                         </article>
@@ -464,17 +466,8 @@
                                                                  <p class="blog-excerpt">
                                      Trust is the foundation of any successful networking platform. Learn about our commitment to transparency, data privacy, and building a secure environment where professionals can connect with confidence.
                                  </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
-                                     <p>In an era where data breaches and privacy concerns dominate headlines, trust has become the most valuable currency in digital platforms. At NetCompass, we understand that professionals entrust us with their most valuable asset—their professional relationships and reputation.</p>
-                                     
-                                     <p>Our commitment to transparency begins with our data practices. We believe users have the right to know exactly how their information is being used. That's why we provide detailed explanations of our data collection, processing, and sharing policies in clear, accessible language. We never sell user data to third parties, and we give users complete control over their information.</p>
-                                     
-                                     <p>Security is another cornerstone of our trust-building efforts. We employ enterprise-grade encryption, regular security audits, and strict access controls to protect user data. Our platform undergoes continuous security testing and we maintain compliance with international data protection regulations including GDPR and CCPA.</p>
-                                     
-                                     <p>We also believe in building trust through accountability. Our team is committed to being responsive to user concerns and transparent about any issues that arise. We regularly publish security reports and maintain open channels of communication with our user community.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
                                  </div>
                             </div>
                         </article>
@@ -494,17 +487,8 @@
                                                                  <p class="blog-excerpt">
                                      Ready to take your professional networking to the next level? Discover how joining the NetCompass community can open doors to new opportunities, valuable connections, and career growth you never thought possible.
                                  </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
-                                     <p>Joining the NetCompass community is more than just signing up for another networking platform—it's becoming part of a movement that's redefining how professionals connect and collaborate. Our community represents a diverse network of forward-thinking professionals who are committed to building meaningful, mutually beneficial relationships.</p>
-                                     
-                                     <p>When you join NetCompass, you gain access to a carefully curated network of professionals who share your commitment to quality connections. Our intelligent matching system ensures that every suggested connection has the potential to add real value to your professional life, whether through mentorship, collaboration opportunities, or career advancement.</p>
-                                     
-                                     <p>The benefits of joining extend beyond individual connections. Our community features include exclusive networking events, industry-specific discussion groups, and collaborative projects that bring together professionals with complementary skills and interests. These opportunities often lead to unexpected career breakthroughs and lasting professional relationships.</p>
-                                     
-                                     <p>We also provide comprehensive onboarding support to help you get the most out of your NetCompass experience. From personalized tutorials to one-on-one guidance from our community managers, we ensure that every new member feels confident and supported as they begin their networking journey.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
                                  </div>
                             </div>
                         </article>
@@ -524,17 +508,8 @@
                                                                  <p class="blog-excerpt">
                                      Getting started with NetCompass is designed to be as smooth as possible. Learn about our streamlined onboarding process and how you can have your professional profile up and running in minutes, not hours.
                                  </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
-                                     <p>We understand that the onboarding process can make or break a user's experience with any platform. That's why we've designed our onboarding flow to be intuitive, efficient, and genuinely helpful. From the moment you sign up, our goal is to get you connected and productive as quickly as possible.</p>
-                                     
-                                     <p>The onboarding process begins with a simple, guided profile creation that takes just a few minutes. We ask only the essential questions needed to start making meaningful connections, avoiding the overwhelming forms that plague many networking platforms. Our intelligent system can also import relevant information from your existing professional profiles to save you time.</p>
-                                     
-                                     <p>Once your profile is created, our AI-powered system immediately begins analyzing your professional background, interests, and goals to suggest relevant connections. These initial suggestions are carefully curated to ensure quality, and you have complete control over which connections to pursue.</p>
-                                     
-                                     <p>We also provide interactive tutorials and tips throughout the onboarding process to help you understand and utilize all of NetCompass's features effectively. Our support team is available to answer any questions and provide personalized guidance to ensure you get the most out of your networking experience.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
                                  </div>
                             </div>
                         </article>
@@ -554,17 +529,8 @@
                                                                  <p class="blog-excerpt">
                                      Managing your professional network shouldn't be complicated. Discover the powerful tools and features that make organizing, categorizing, and nurturing your connections easier and more effective than ever before.
                                  </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
-                                     <p>Effective network management is the cornerstone of professional success, yet most platforms make this process unnecessarily complex. At NetCompass, we've reimagined connection management to be both powerful and intuitive, giving you the tools you need without the complexity you don't.</p>
-                                     
-                                     <p>Our advanced categorization system allows you to organize connections by multiple criteria simultaneously—industry, relationship strength, potential for collaboration, and more. This multi-dimensional approach helps you identify opportunities and maintain relationships more effectively than traditional single-category systems.</p>
-                                     
-                                     <p>We've also developed intelligent automation features that handle the routine aspects of network maintenance. Automated follow-up reminders, relationship strength tracking, and smart contact suggestions help you stay engaged with your network without constant manual effort. The system learns from your interactions to provide increasingly relevant suggestions.</p>
-                                     
-                                     <p>The platform's analytics dashboard provides valuable insights into your networking patterns and relationship health. You can track engagement levels, identify connections that need attention, and measure the effectiveness of your networking efforts. This data-driven approach helps you optimize your networking strategy for maximum impact.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
                                  </div>
                             </div>
                         </article>
@@ -584,17 +550,8 @@
                                                                  <p class="blog-excerpt">
                                      Effective communication is key to building strong professional relationships. Explore how our integrated messaging and live streaming features help you stay connected and engaged with your network in real-time.
                                  </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                    <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
-                                     <p>Communication is the lifeblood of any professional relationship, and we've designed our messaging platform to facilitate meaningful, productive conversations. Unlike generic messaging apps, our system is specifically tailored for professional networking, with features that enhance rather than distract from your networking goals.</p>
-                                     
-                                     <p>Our messaging platform includes intelligent features like conversation templates for common networking scenarios, automated follow-up suggestions, and relationship context that helps you maintain appropriate communication styles with different connections. The system also provides gentle reminders for important conversations that need attention.</p>
-                                     
-                                     <p>The live streaming feature takes professional networking to the next level by enabling real-time virtual events, presentations, and networking sessions. These live interactions help build stronger relationships than text-based communication alone, while maintaining the convenience of digital platforms. Our streaming technology ensures high-quality, reliable connections for professional interactions.</p>
-                                     
-                                     <p>We've also integrated advanced privacy controls that allow users to manage their communication preferences with granular precision. Whether you prefer to receive messages from all connections or only those in specific categories, our system respects your preferences while maintaining the flexibility needed for effective networking.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
                                  </div>
                             </div>
                         </article>
@@ -614,17 +571,8 @@
                                                                  <p class="blog-excerpt">
                                      See your professional network like never before with our advanced visualization tools. Discover hidden connections, identify key decision makers, and understand the strength of your relationships through intuitive data visualization.
                                  </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
-                                     <p>Network visualization is one of NetCompass's most powerful features, transforming complex relationship data into clear, actionable insights. Our advanced visualization tools help you understand your network structure, identify opportunities, and make informed decisions about relationship development.</p>
-                                     
-                                     <p>The platform's network mapping feature creates interactive visual representations of your professional relationships, showing connection strength, mutual contacts, and potential pathways to key decision makers. This bird's-eye view helps you identify strategic networking opportunities and understand how your connections relate to each other.</p>
-                                     
-                                     <p>Our decision-maker identification tools use advanced algorithms to analyze your network and highlight individuals who have significant influence in their organizations or industries. This helps you focus your networking efforts on connections that can provide the most value for your career goals.</p>
-                                     
-                                     <p>The relationship strength indicators provide real-time feedback on the health of your professional relationships, helping you identify which connections need attention and which are thriving. This data-driven approach ensures that your networking efforts are focused and effective.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
                                  </div>
                             </div>
                         </article>
@@ -647,7 +595,7 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="index.html#contact" class="btn bg-white text-orange-600 hover:bg-gray-100">
-                    Contact Sales
+                    Contact Us
                 </a>
             </div>
         </div>

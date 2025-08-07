@@ -31,11 +31,11 @@
             color: #1a1a1a;
             background-color: #ffffff;
         }
-        
+/*         
         .dark {
             color: #ffffff;
             background-color: #0a0a0a;
-        }
+        } */
         
         .container {
             max-width: 1200px;
@@ -90,10 +90,10 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
-        .dark .card {
+        /* .dark .card {
             background: #1a1a1a;
             color: white;
-        }
+        } */
         
         .navbar {
             position: fixed;
@@ -107,17 +107,17 @@
             transition: all 0.3s ease;
         }
         
-        .dark .navbar {
+        /* .dark .navbar {
             background: rgba(10, 10, 10, 0.95);
-        }
+        } */
         
         .hero-gradient {
             background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 107, 53, 0.1) 100%);
         }
         
-        .dark .hero-gradient {
+        /* .dark .hero-gradient {
             background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(10, 10, 10, 1) 50%, rgba(255, 107, 53, 0.05) 100%);
-        }
+        } */
         
         .pattern-bg {
             background-image: radial-gradient(circle at 1px 1px, rgba(255, 107, 53, 0.1) 1px, transparent 0);
@@ -182,11 +182,14 @@
                 
                 <div class="desktop-menu hidden md:flex items-center space-x-8">
                     <a href="blog.html" class="text-gray-700 hover:text-orange-600 transition-colors">Blog</a>
-                    <a href="#gallery" class="text-gray-700 hover:text-orange-600 transition-colors">Gallery</a>
-                    <!-- <a href="#testimonials" class="text-gray-700 hover:text-orange-600 transition-colors">Testimonials</a> -->
-                    <!-- <a href="#pricing" class="text-gray-700 hover:text-orange-600 transition-colors">Pricing</a> -->
                     <a href="#contact" class="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
                 </div>
+
+                <div class="mobile-menu space-x-4">
+                    <a href="blog.html" class="text-gray-700 hover:text-orange-600 transition-colors">Blog</a>
+                    <a href="#contact" class="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
+                </div>
+
             </div>
         </div>
     </nav>
@@ -380,7 +383,7 @@
             <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
                 <div class="flex flex-col items-center w-full max-w-4xl text-center mx-auto mb-12">
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
-                        Ready reach your full
+                        Ready to reach your full
                         <span class="text-gradient">network?</span>
                     </h2>
                     <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
@@ -481,7 +484,7 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#contact" class="btn bg-white text-orange-600 hover:bg-gray-100">
-                    Contact Sales
+                    Contact Us
                 </a>
             </div>
         </div>
