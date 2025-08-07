@@ -185,23 +185,22 @@
         <div class="container">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2">
-                    <img src="img/netcompas-icon.png" alt="NetCompass Logo" class="w-10 h-10 rounded-md">
-                    <span class="font-bold text-xl">NetCompass</span>
+                    <a href="#hero">
+                        <img src="img/netcompas-icon.png" alt="NetCompass Logo" class="w-10 h-10 rounded-md">
+                    </a>
+                    <a href="#hero">
+                        <span class="font-bold text-xl">NetCompass</span>
+                    </a>
                 </div>
                 
                 <div class="desktop-menu hidden md:flex items-center space-x-8">
                     <a href="#features" class="text-gray-700 hover:text-orange-600 transition-colors">Features</a>
-                    <a href="#testimonials" class="text-gray-700 hover:text-orange-600 transition-colors">Testimonials</a>
+                    <!-- <a href="#testimonials" class="text-gray-700 hover:text-orange-600 transition-colors">Testimonials</a> -->
                     <a href="#pricing" class="text-gray-700 hover:text-orange-600 transition-colors">Pricing</a>
                     <a href="#contact" class="text-gray-700 hover:text-orange-600 transition-colors">Contact</a>
                     <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors">
                         <i data-lucide="moon" class="w-5 h-5"></i>
                     </button>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <a href="/login" class="text-gray-700 hover:text-orange-600 transition-colors">Login</a>
-                    <a href="/register" class="btn btn-primary">Get Started</a>
                 </div>
                 
                 <button class="mobile-menu md:hidden" id="mobile-menu-btn">
@@ -224,7 +223,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative py-20 lg:py-32 overflow-hidden hero-gradient">
+    <section id="hero"class="relative py-20 lg:py-32 overflow-hidden hero-gradient">
         <div class="absolute inset-0 opacity-30 pattern-bg"></div>
         
         <div class="container relative">
@@ -244,14 +243,10 @@
                     </div>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="/register" class="btn btn-primary">
-                            Start Building Your Network
-                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                        </a>
                         <a href="https://demo.arcade.software/PMzLBffUa1Z6EtZBeu2I?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" 
                            target="_blank" 
                            rel="noopener noreferrer" 
-                           class="btn btn-secondary">
+                           class="btn btn-primary">
                             <i data-lucide="play" class="w-5 h-5 mr-2"></i>
                             Watch Demo
                         </a>
@@ -339,6 +334,7 @@
     </section>
 
     <!-- Testimonials Section -->
+    <!-- 
     <section id="testimonials" class="section-padding bg-gray-50 dark:bg-gray-800">
         <div class="container">
             <div class="text-center mb-16">
@@ -418,7 +414,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Pricing Section -->
     <section id="pricing" class="section-padding bg-gray-50 dark:bg-gray-800">
@@ -576,7 +572,7 @@
 
                     <!-- Right Half - Contact Form -->
                     <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 lg:p-8">
-                        <form id="contact-form" class="space-y-6">
+                        <form id="contact-form" class="space-y-6" action="mailto:me@netcompass.io" method="post" enctype="text/plain">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                     Full Name
@@ -642,11 +638,7 @@
                 Join thousands of professionals who are already building stronger connections with Netcompass.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/register" class="btn bg-white text-orange-600 hover:bg-gray-100">
-                    Start Free Trial
-                    <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                </a>
-                <a href="#contact" class="btn border-2 border-white text-white hover:bg-white hover:text-orange-600">
+                <a href="#contact" class="btn bg-white text-orange-600 hover:bg-gray-100">
                     Contact Sales
                 </a>
             </div>
@@ -669,7 +661,7 @@
                 </div>
 
                 <p class="text-center text-sm text-gray-400">
-                    &copy; 2024 NetCompass. All rights reserved.
+                    &copy; 2025 NetCompass. All rights reserved.
                 </p>
             </div>
         </div>
