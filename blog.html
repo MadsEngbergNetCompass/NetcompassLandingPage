@@ -12,6 +12,9 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
+    <!-- Blog Content -->
+    <script src="blog-content.js"></script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -247,6 +250,34 @@
         .read-less:hover {
             color: #e55a2b;
         }
+        
+        /* Enhanced styling for expanded content */
+        .blog-expanded-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .blog-expanded-content h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #374151;
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .blog-expanded-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .blog-expanded-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-expanded-content strong {
+            color: #1f2937;
+        }
     </style>
 </head>
 <body>
@@ -283,7 +314,7 @@
                         <h3 class="text-xl font-bold mb-4 text-gray-900">Table of Contents</h3>
                         <nav class="space-y-2">
                             <a href="#post-1" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Revolutionizing Professional Networking
+                                Maximizing Your Networking Potential
                             </a>
                             <a href="#post-2" class="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
                                 Crafting Meaningful Connections
@@ -339,7 +370,7 @@
                         
                         <!-- Blog Post 1 -->
                         <article id="post-1" class="blog-post">
-                            <img src="img/Revolutionizing Professional Networking for Everyone-Ab1.png" 
+                            <img src="img/Maximizing Your Network with Netcompass Tools-B1.png" 
                                  alt="Professional Networking" 
                                  class="blog-image">
                             <div class="blog-content">
@@ -348,51 +379,12 @@
                                     <span>•</span>
                                     <span>Networking</span>
                                 </div>
-                                <h2 class="blog-title">Revolutionizing Professional Networking for Everyone</h2>
-                                                                 <p class="blog-excerpt">
-                                     Discover how NetCompass is transforming the way professionals connect, build relationships, and unlock opportunities in today's digital landscape. Our platform combines cutting-edge technology with human-centered design to create meaningful connections that drive career growth.
-                                 </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
+                                <h2 class="blog-title">Maximizing Your Networking Potential</h2>
+                                    <p class="blog-excerpt">
+                                    Unlock the secrets to building stronger professional relationships.
+                                    </p>
+                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
-                                     <p>In today's rapidly evolving professional landscape, the traditional approach to networking has become increasingly inadequate. Professionals are seeking more than just superficial connections—they want meaningful relationships that can truly advance their careers and personal growth.</p>
-                                     
-                                     <p>NetCompass addresses this need by providing a comprehensive platform that goes beyond simple contact management. Our advanced algorithms help identify potential connections based on shared interests, professional goals, and complementary skills. This intelligent matching system ensures that every connection has the potential to be mutually beneficial.</p>
-                                     
-                                     <p>The platform's user-friendly interface makes it easy to maintain and nurture these relationships. From automated follow-up reminders to personalized communication templates, NetCompass provides the tools needed to build lasting professional relationships without the overwhelming complexity of traditional networking platforms.</p>
-                                     
-                                     <p>What truly sets NetCompass apart is our commitment to authenticity. We understand that genuine professional relationships are built on trust, transparency, and mutual respect. Our platform facilitates these authentic connections while providing the technological infrastructure needed to scale your network effectively.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
-                                 </div>
-                            </div>
-                        </article>
-
-                        <!-- Blog Post 2 -->
-                        <article id="post-2" class="blog-post">
-                            <img src="img/Our Journey Crafting Meaningful Connections in a Superficial Networking World-Ab2.png" 
-                                 alt="Meaningful Connections" 
-                                 class="blog-image">
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <span>January 12, 2025</span>
-                                    <span>•</span>
-                                    <span>Connections</span>
-                                </div>
-                                <h2 class="blog-title">Our Journey: Crafting Meaningful Connections in a Superficial Networking World</h2>
-                                                                 <p class="blog-excerpt">
-                                     In a world where networking often feels transactional and superficial, we're on a mission to bring authenticity back to professional relationships. Learn about our philosophy and how we're building a platform that prioritizes quality over quantity.
-                                 </p>
-                                 <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More →</a>
-                                 <div class="blog-expanded-content">
-                                     <p>The current state of professional networking is characterized by a paradox: while we have more ways to connect than ever before, the quality of these connections has diminished significantly. Social media platforms and traditional networking events often prioritize quantity over quality, leading to shallow relationships that provide little real value.</p>
-                                     
-                                     <p>At NetCompass, we believe that meaningful professional relationships are built on three fundamental principles: mutual understanding, genuine interest, and long-term value creation. Our platform is designed to facilitate connections that go beyond the superficial exchange of business cards or LinkedIn connections.</p>
-                                     
-                                     <p>We've developed sophisticated algorithms that analyze not just professional backgrounds, but also interests, values, and long-term goals. This deeper understanding allows us to suggest connections that have the potential to develop into mutually beneficial relationships. Our users report that connections made through NetCompass are more likely to result in actual collaborations, mentorship opportunities, and career advancement.</p>
-                                     
-                                     <p>Quality over quantity isn't just a slogan for us—it's embedded in every feature of our platform. From our intelligent connection suggestions to our relationship strength indicators, every tool is designed to help users build fewer, but more meaningful, professional relationships.</p>
-                                     
-                                     <a href="#" class="read-less" onclick="toggleBlogContent(this)">Read Less ←</a>
                                  </div>
                             </div>
                         </article>
