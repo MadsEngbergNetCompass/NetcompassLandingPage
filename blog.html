@@ -174,18 +174,31 @@
             border-radius: 1rem;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .blog-post:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            scroll-margin-top: 6rem; /* Add offset for fixed navbar */
         }
         
         .blog-image {
             width: 100%;
             height: 300px;
             object-fit: cover;
+            object-position: center center; /* You can adjust this */
+        }
+        
+        /* Individual image positioning classes */
+        .blog-image-top {
+            object-position: 75% 25%;
+        }
+        
+        .blog-image-bottom {
+            object-position: 25% 75%;
+        }
+        
+        .blog-image-left {
+            object-position: left center;
+        }
+        
+        .blog-image-right {
+            object-position: right center;
         }
         
         .blog-content {
@@ -226,17 +239,22 @@
         }
         
         .blog-expanded-content {
-            display: none;
+            max-height: 0;
+            overflow: hidden;
             margin-top: 1.5rem;
-            padding-top: 1.5rem;
+            padding-top: 0;
             border-top: 1px solid #e5e7eb;
             font-size: 0.875rem;
             color: #374151;
             line-height: 1.6;
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
         }
         
         .blog-expanded-content.show {
-            display: block;
+            max-height: 2000px;
+            padding-top: 1.5rem;
+            opacity: 1;
         }
         
         .read-less {
@@ -317,46 +335,46 @@
                                 Maximizing Your Networking Potential    
                             </a>
                             <a href="#post-2" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Crafting Meaningful Connections
+                                The Importance of Relationship Strength in Networking
                             </a>
                             <a href="#post-3" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Enhancing Your Networking Experience
+                                NetCompass: Unlock the Full Potential of Your Professional Network
                             </a>
                             <a href="#post-4" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Leading the Way in Innovation
+                                The Importance of Relationship Strength in Networking: Why Quality Connections Matter More Than Quantity
                             </a>
                             <a href="#post-5" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Commitment to Transparency
+                                The Power of Strong Relationships: Unlocking Business Growth Through Quality Connections
                             </a>
                             <a href="#post-6" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Join Our Professional Network
+                                Future Innovations at Netcompass
                             </a>
                             <a href="#post-7" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Seamless Onboarding
+                                The Power of Strong Relationships
                             </a>
                             <a href="#post-8" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Advanced Connections Management
+                                How Token Governance Works on NetCompass.io
                             </a>
                             <a href="#post-9" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Communication Platform
+                                Maximizing Your Network Effectively
                             </a>
                             <a href="#post-10" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Network Visualization
+                                The Value of Strong Connections: Why Relationships Are Key to Success
                             </a>
                             <a href="#post-11" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Intuitive User Experience
+                                Platform Enhancements Coming to Netcompass
                             </a>
                             <a href="#post-13" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Enhanced Collaboration Tools
+                                What's New in Netcompass?
                             </a>
                             <a href="#post-14" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Increased Customization
+                                Upcoming Features You’ll Love
                             </a>
                             <a href="#post-15" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                Improved Security and Compliance
+                                Unlock Your Networking Potential with Netcompass
                             </a>
                             <a href="#post-16" class="block text-sm text-gray-300 hover:text-orange-600 transition-colors py-2 border-l-2 border-transparent hover:border-orange-600 pl-3">
-                                What’s Next?
+                                Why Quality Connections Matter More Than Quantity
                             </a>
                         </nav>
                     </div>
@@ -386,16 +404,19 @@
                         <article id="post-1" class="blog-post">
                             <img src="img/Maximizing Your Network with Netcompass Tools-B1.png" 
                                  alt="Professional Networking" 
-                                 class="blog-image">
+                                 class="blog-image blog-image-top">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>January 15, 2025</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
                                     <span>•</span>
                                     <span>Networking</span>
+                                    <span>•</span>
+                                    <span>January 15, 2025</span>
                                 </div>
                                 <h2 class="blog-title">Maximizing Your Networking Potential</h2>
                                     <p class="blog-excerpt">
-                                    Unlock the secrets to building stronger professional relationships.
+                                    Unlock the secrets to building stronger professional relationships and understand the value of knowing your relationships and how they can grow your business.
                                     </p>
                                  <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
@@ -405,18 +426,21 @@
 
                         <!-- Blog Post 2 -->
                         <article id="post-2" class="blog-post">
-                            <img src="img/Our Journey Crafting Meaningful Connections in a Superficial Networking World-Ab2.png" 
+                            <img src="img/The Importance of Relationship Strength in Networking-B2.png" 
                                  alt="Meaningful Connections" 
-                                 class="blog-image">
+                                 class="blog-image blog-image-top">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>January 12, 2025</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Connections</span>
+                                    <span>•</span>
+                                    <span>January 12, 2025</span>
                                 </div>
-                                <h2 class="blog-title">Our Journey: Crafting Meaningful Connections in a Superficial Networking World</h2>
-                                                                 <p class="blog-excerpt">
-                                     In a world where networking often feels transactional and superficial, we're on a mission to bring authenticity back to professional relationships. Learn about our philosophy and how we're building a platform that prioritizes quality over quantity.
+                                <h2 class="blog-title">The Importance of Relationship Strength in Networking</h2>
+                                <p class="blog-excerpt">
+                                    Discover why quality connections matter more than quantity.
                                  </p>
                                  <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
@@ -426,18 +450,21 @@
 
                         <!-- Blog Post 3 -->
                         <article id="post-3" class="blog-post">
-                            <img src="img/Designed for You Enhancing Your Networking Experience-Ab3.png" 
+                            <img src="img/Upcoming AI Innovations in Netcompass-B3.png" 
                                  alt="User Experience" 
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>January 10, 2025</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>UX Design</span>
+                                    <span>•</span>
+                                    <span>January 10, 2025</span>
                                 </div>
-                                <h2 class="blog-title">Designed for You: Enhancing Your Networking Experience</h2>
-                                                                 <p class="blog-excerpt">
-                                     Every feature in NetCompass is designed with you in mind. From intuitive interfaces to personalized recommendations, discover how our user-centered approach makes networking more effective and enjoyable than ever before.
+                                <h2 class="blog-title">NetCompass: Unlock the Full Potential of Your Professional Network</h2>
+                                <p class="blog-excerpt">
+                                    Managing and filtering connections based on relationships, industries, and insights is nearly impossible. That's where NetCompass comes in.
                                  </p>
                                  <a href="#" class="read-more" onclick="toggleBlogContent(this)">Read More</a>
                                  <div class="blog-expanded-content">
@@ -452,9 +479,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>January 8, 2025</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Innovation</span>
+                                    <span>•</span>
+                                    <span>January 8, 2025</span>
                                 </div>
                                 <h2 class="blog-title">Leading the Way in Networking Innovation</h2>
                                                                  <p class="blog-excerpt">
@@ -473,9 +503,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>January 5, 2025</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Trust</span>
+                                    <span>•</span>
+                                    <span>January 5, 2025</span>
                                 </div>
                                 <h2 class="blog-title">Commitment to Transparency: Your Trust is Our Priority</h2>
                                                                  <p class="blog-excerpt">
@@ -494,9 +527,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>January 3, 2025</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Community</span>
+                                    <span>•</span>
+                                    <span>January 3, 2025</span>
                                 </div>
                                 <h2 class="blog-title">Join Our Professional Network Today</h2>
                                                                  <p class="blog-excerpt">
@@ -515,9 +551,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 30, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Getting Started</span>
+                                    <span>•</span>
+                                    <span>December 30, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Seamless Onboarding: Effortlessly Connect and Set Up Your Profile</h2>
                                                                  <p class="blog-excerpt">
@@ -536,9 +575,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 28, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Features</span>
+                                    <span>•</span>
+                                    <span>December 28, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Streamline Your Networking with Advanced Connections Management Features</h2>
                                                                  <p class="blog-excerpt">
@@ -557,9 +599,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 25, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Communication</span>
+                                    <span>•</span>
+                                    <span>December 25, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Streamline Your Communication with Our Live Streams and Messaging Platform</h2>
                                                                  <p class="blog-excerpt">
@@ -578,9 +623,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 22, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Analytics</span>
+                                    <span>•</span>
+                                    <span>December 22, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Unlock Your Network: Visualize Connections and Key Decision Makers Effortlessly</h2>
                                                                  <p class="blog-excerpt">
@@ -599,9 +647,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 22, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Analytics</span>
+                                    <span>•</span>
+                                    <span>December 19, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Unlock Your Network: Visualize Connections and Key Decision Makers Effortlessly</h2>
                                                                  <p class="blog-excerpt">
@@ -620,9 +671,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 22, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Analytics</span>
+                                    <span>•</span>
+                                    <span>December 17, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Unlock Your Network: Visualize Connections and Key Decision Makers Effortlessly</h2>
                                                                  <p class="blog-excerpt">
@@ -641,9 +695,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 22, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Analytics</span>
+                                    <span>•</span>
+                                    <span>December 15, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Unlock Your Network: Visualize Connections and Key Decision Makers Effortlessly</h2>
                                                                  <p class="blog-excerpt">
@@ -662,9 +719,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 22, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Analytics</span>
+                                    <span>•</span>
+                                    <span>December 12, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Unlock Your Network: Visualize Connections and Key Decision Makers Effortlessly</h2>
                                                                  <p class="blog-excerpt">
@@ -683,9 +743,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 22, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Analytics</span>
+                                    <span>•</span>
+                                    <span>December 22, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Unlock Your Network: Visualize Connections and Key Decision Makers Effortlessly</h2>
                                                                  <p class="blog-excerpt">
@@ -704,9 +767,12 @@
                                  class="blog-image">
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span>December 22, 2024</span>
-                                    <span>•</span>
+                                    <img src="img/Henrik Horst.jpeg" alt="Henrik Horst" class="w-10 h-10 rounded-full">
+                                    <span>Henrik Horst</span>
+                                    <span>•</span> 
                                     <span>Analytics</span>
+                                    <span>•</span>
+                                    <span>December 8, 2024</span>
                                 </div>
                                 <h2 class="blog-title">Unlock Your Network: Visualize Connections and Key Decision Makers Effortlessly</h2>
                                                                  <p class="blog-excerpt">
@@ -811,6 +877,8 @@
                 readLessBtn.style.display = 'inline-block';
             }
         }
+        
+
     </script>
 </body>
 </html>

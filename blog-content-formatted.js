@@ -4,6 +4,8 @@ const blogPosts = {
         title: "Maximizing Your Networking Potential",
         excerpt: "Unlock the secrets to building stronger professional relationships.",
         expandedContent: `
+            <h3>Relationships as a Cornerstone of Business Success</h3>
+
             <p>In business, relationships are everything. Deals are closed, collaborations are formed, and trust is built based on how well we manage our connections. Yet, most professionals fail to tap into the true power of their network. We often think of our contacts as a static list—a LinkedIn profile, an email thread, or a saved phone number.</p>
             
             <p>But what if your network was more than just a list? What if it was a dynamic, living ecosystem of opportunities? By truly understanding your relationships—your shared history, mutual interests, and professional contexts—you can unlock incredible potential for growth and success.</p>
@@ -838,6 +840,37 @@ function loadBlogContent(postId) {
         if (expandedContent) {
             expandedContent.innerHTML = post.expandedContent + '<a href="#' + postId + '" class="read-less" onclick="toggleBlogContent(this)">Read Less</a>';
         }
+    }
+}
+
+// Function to toggle blog content with smooth scrolling
+function toggleBlogContent(element) {
+    const blogPost = element.closest('.blog-post');
+    const expandedContent = blogPost.querySelector('.blog-expanded-content');
+    const readMoreBtn = blogPost.querySelector('.read-more');
+    const readLessBtn = blogPost.querySelector('.read-less');
+    
+    if (expandedContent.classList.contains('show')) {
+        // Collapse the content with animation
+        expandedContent.classList.remove('show');
+        readMoreBtn.style.display = 'inline-block';
+        readLessBtn.style.display = 'none';
+        
+        // Wait for the collapse animation to complete before scrolling
+        expandedContent.addEventListener('transitionend', function scrollAfterCollapse() {
+            // Smooth scroll to the blog post
+            blogPost.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+            // Remove the event listener to prevent multiple calls
+            expandedContent.removeEventListener('transitionend', scrollAfterCollapse);
+        }, { once: true });
+    } else {
+        // Expand the content
+        expandedContent.classList.add('show');
+        readMoreBtn.style.display = 'none';
+        readLessBtn.style.display = 'inline-block';
     }
 }
 
