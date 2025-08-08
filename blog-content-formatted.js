@@ -836,7 +836,7 @@ function loadBlogContent(postId) {
     if (post) {
         const expandedContent = document.querySelector(`#${postId} .blog-expanded-content`);
         if (expandedContent) {
-            expandedContent.innerHTML = post.expandedContent + '<a href="#${postId}" class="read-less" onclick="toggleBlogContent(this)">Read Less</a>';
+            expandedContent.innerHTML = post.expandedContent + '<a href="#' + postId + '" class="read-less" onclick="toggleBlogContent(this)">Read Less</a>';
         }
     }
 }
